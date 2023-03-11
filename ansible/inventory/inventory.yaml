@@ -1,3 +1,14 @@
 all:
   hosts:
-    192.168.64.2:
+  children:
+    webservers:
+      hosts:
+        webserver1:
+        webserver2:
+    LoadBalancer:
+      hosts:
+        LoadBalancer:
+    Database:
+      hosts:
+        db:
+

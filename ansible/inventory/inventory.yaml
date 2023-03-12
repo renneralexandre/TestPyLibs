@@ -5,10 +5,10 @@ all:
       hosts:
         webserver1:
         webserver2:
-    LoadBalancer:
+    LoadBalancers:
       hosts:
         LoadBalancer:
-    Database:
+    databases:
       hosts:
         db:
 

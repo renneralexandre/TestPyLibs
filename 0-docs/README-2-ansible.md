@@ -1,19 +1,24 @@
-# Step-by-Step
+# Prepare 4 servers on MacOs to test Ansible
 
-## Prepare 4 servers on MacOs to test Ansible
+## Step-by-Step
 
+1) Install ansible
 
-2) pip install ansible && mkdir ansible && cd ansible
-3) ansible-config init --disabled > ansible-disable.cfg
-4) ansible-config init --disabled -t all > ansible-disable-plugins.cfg
+pip install ansible && mkdir ansible && cd ansible
 
-5) Ansible
+2) configure
+ To see some configs
+ 
+ `ansible-config init --disabled > ./config-examples/ansible-disable.cfg`
+ 
+ `ansible-config init --disabled -t all > ./config-examples/ansible-disable-plugins.cfg`
 
-5.1) ansible.cfg
+    To config create ./ansible.cfg
+    - Define user, path-to-private-key, path-to-inventory
 
-5.2) Inventory
-    - update ansible.cfg
+3) Create Inventory
     - mkdir inventory
     - touch inventory.yaml
+    
 
 

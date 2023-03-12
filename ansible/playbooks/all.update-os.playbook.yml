@@ -1,5 +1,5 @@
 ---
-- hosts: sandbox
+- hosts: all
   name: Update OS
   become: true
 

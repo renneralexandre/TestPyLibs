@@ -1,0 +1,9 @@
+---
+
+- name: Instalar NGINX
+  hosts: webservers
+  remote_user: ansible
+
+  tasks:
+  - name: Install nginx
+

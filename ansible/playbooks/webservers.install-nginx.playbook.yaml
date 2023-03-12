@@ -1,9 +1,9 @@
 ---
-
 - name: Instalar NGINX
   hosts: webservers
   remote_user: ansible
 
   tasks:
-  - name: Install nginx
-
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: "nginx"

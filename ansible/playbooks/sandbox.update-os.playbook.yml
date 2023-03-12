@@ -1,0 +1,14 @@
+---
+- hosts: sandbox
+  name: Update OS
+  become: true
+
+  tasks:
+    - name: Upgrade Ubuntu
+      ansible.builtin.apt:
+        name: "*"
+        # state: latest
+
+    - name: Update all packages to their latest version
+      ansible.builtin.apt:
+        name: "*"

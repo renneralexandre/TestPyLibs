@@ -1,15 +1,7 @@
 ---
 # tasks file for roleservertools
 - name: "T01: Set a hostname"
-  ansible.builtin.hostname:
-    name: "{{ hostname }}"
-  notify:
-    - ClearHostsFile_loopback_localhost
-    - ClearHostsFile_loopback_servername
-    - ClearHostsFile_ip_servername
-    - AddinHostsFile_loopback_localhost
-    - AddinHostsFile_loopback_servername
-    - AddinHostsFile_ip_servername
+  ansible.builtin.include_tasks: t01_set_host_names.yml
 
 - name: "T02: Update Ubuntu packages"
   ansible.builtin.apt:

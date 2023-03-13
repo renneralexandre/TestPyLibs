@@ -1,0 +1,28 @@
+---
+- name: Playbook - Create folder and file
+  hosts: all
+  become: true
+  gather_facts: false
+
+  vars:
+    app_dir: /opt/webapp
+
+  tasks:
+    - name: Create folfer
+      ansible.builtin.file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: ansible
+        group: ansible
+
+        mode: "0755"
+
+    - name: Create file
+      ansible.builtin.file:
+        path: "{{ app_dir }}/teste.py"
+        state: touch
+        owner: ansible
+        group: ansible
+        mode: "0755"
+        modification_time: preserve
+        access_time: preserve

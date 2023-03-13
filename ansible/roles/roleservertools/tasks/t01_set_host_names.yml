@@ -10,6 +10,3 @@
     - AddinHostsFile_loopback_localhost
     - AddinHostsFile_loopback_servername
     - AddinHostsFile_ip_servername
-    - ClearAllEntries
-    - UpdateAllEntries
-    - Debug

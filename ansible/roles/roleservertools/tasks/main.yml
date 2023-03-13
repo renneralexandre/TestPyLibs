@@ -3,6 +3,9 @@
 - name: "T01: Set a hostname"
   ansible.builtin.include_tasks: t01_set_host_names.yml
 
+- name: "T02: Update /etc/hosts"
+  ansible.builtin.include_tasks: t02_update_hosts.yml
+
 - name: "T02: Update Ubuntu packages"
   ansible.builtin.apt:
     update_cache: true

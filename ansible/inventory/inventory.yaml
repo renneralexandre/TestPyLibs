@@ -18,6 +18,6 @@ all:
     sandboxes:
       hosts:
         sandbox:
-          hostname: "sandbox.local.com"
+          hostname: "sandbox1.local.com"
 
 

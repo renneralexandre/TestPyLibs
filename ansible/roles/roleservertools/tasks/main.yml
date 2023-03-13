@@ -1,5 +1,10 @@
 ---
 # tasks file for roleservertools
+- name: Set a hostname
+  ansible.builtin.hostname:
+    name: "{{ hostname }}"
+  notify: AddinHostsFile
+
 - name: Task - Update Ubuntu packages
   ansible.builtin.apt:
     update_cache: true

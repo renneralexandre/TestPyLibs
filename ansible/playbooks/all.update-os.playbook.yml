@@ -1,14 +1,18 @@
 ---
-- hosts: all
-  name: Update OS
+- name: Playbook - Update OS on all hosts
+  hosts: all
   become: true
+  gather_facts: false
 
   tasks:
-    - name: Update packages
+    - name: Task - Update Ubuntu packages
       ansible.builtin.apt:
         update_cache: true
+      when: ansible_hostname == "sandbox"
+      # when: (ansible_facts['ansible_hostname'] == 'sandbox')
 
-    - name: Upgrade packages
+    - name: Task - Upgrade Ubuntu packages
       ansible.builtin.apt:
-        name: "*"
-        state: present
+        upgrade: true
+        autoremove: true
+      when: ansible_hostname == "sandbox"

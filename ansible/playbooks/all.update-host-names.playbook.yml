@@ -1,0 +1,10 @@
+---
+- name: Playbook - Set hostname from inventory variable on all hosts
+  hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Set a hostname
+      ansible.builtin.hostname:
+        name: "{{ hostname }}"

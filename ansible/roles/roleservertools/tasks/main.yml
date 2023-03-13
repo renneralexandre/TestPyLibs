@@ -1,5 +1,5 @@
 ---
-# tasks file for roleservertools
+# tasks file for roleservertool
 - name: "T01: Set hostname"
   ansible.builtin.include_tasks: t01_set_host_names.yml
 

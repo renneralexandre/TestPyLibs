@@ -1,6 +1,7 @@
 ---
 
 -   name: Playbook - Install serverTools
+    hosts: all
     become: true
 
     roles:

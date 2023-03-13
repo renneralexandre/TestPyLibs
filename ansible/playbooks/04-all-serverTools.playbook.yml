@@ -1,6 +1,6 @@
 ---
 
--   name: Playbook - Install serverTools
+-   name: "Play: Install server tools"
     hosts: all
     become: true
 

@@ -1,6 +1,6 @@
 ---
 # tasks file for roleservertools
-- name: Set a hostname
+- name: "T01: Set a hostname"
   ansible.builtin.hostname:
     name: "{{ hostname }}"
   notify:
@@ -11,17 +11,17 @@
     - AddinHostsFile_loopback_servername
     - AddinHostsFile_ip_servername
 
-- name: Task - Update Ubuntu packages
+- name: "T02: Update Ubuntu packages"
   ansible.builtin.apt:
     update_cache: true
     cache_valid_time: 3000
 
-- name: Task - Upgrade Ubuntu packages
+- name: "T03: Upgrade Ubuntu packages"
   ansible.builtin.apt:
     upgrade: true
     autoremove: true
 
-- name: "Task - Install linux server tools"
+- name: "T04: Install linux server tools"
   ansible.builtin.apt:
     update_cache: true
     cache_valid_time: 3000

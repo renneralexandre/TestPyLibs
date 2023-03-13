@@ -1,14 +1,5 @@
-iotop
-iftop
-nmon
-ncdu
-iperf
-stress
-ntp
-traceroute
-mtr
-screen
 
+screen
 avahi-daemon
 avahi-utils
 cifs-utils

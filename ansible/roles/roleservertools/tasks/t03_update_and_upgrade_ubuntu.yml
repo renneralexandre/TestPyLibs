@@ -1,0 +1,10 @@
+---
+- name: "Update Ubuntu packages"
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3000
+
+- name: "Upgrade Ubuntu packages"
+  ansible.builtin.apt:
+    upgrade: true
+    autoremove: true

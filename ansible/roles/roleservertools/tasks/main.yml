@@ -1,34 +1,13 @@
 ---
 # tasks file for roleservertools
-- name: "T01: Set a hostname"
+- name: "T01: Set hostname"
   ansible.builtin.include_tasks: t01_set_host_names.yml
 
 - name: "T02: Update /etc/hosts"
   ansible.builtin.include_tasks: t02_update_hosts.yml
 
-- name: "T02: Update Ubuntu packages"
-  ansible.builtin.apt:
-    update_cache: true
-    cache_valid_time: 3000
-
-- name: "T03: Upgrade Ubuntu packages"
-  ansible.builtin.apt:
-    upgrade: true
-    autoremove: true
+- name: "T03: Update and upgrade Ubuntu packages"
+  ansible.builtin.include_tasks: t03_update_and_upgrade_ubuntu.yml
 
 - name: "T04: Install linux server tools"
-  ansible.builtin.apt:
-    update_cache: true
-    cache_valid_time: 3000
-    name:
-      - vim # text editor
-      - ncdu # disk space
-      - iotop # test - io
-      - nmon # test - general
-      - iftop # test - network
-      - iperf # test - network
-      - mtr # network throubleshooting
-      - traceroute # network throubleshooting
-      - stress # test - stress    | ex: stress --cpu 4 --timeout 60s
-      - ntp # clock sync          | TODO task to config /etc/ntp.conf
-    state: present
+  ansible.builtin.include_tasks: t04_install_linux_server_tools.yml

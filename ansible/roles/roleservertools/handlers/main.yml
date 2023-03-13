@@ -1,10 +1,39 @@
 ---
 # handlers file for roleservertools
-- name: AddinHostsFile
+- name: ClearHostsFile_loopback_localhost
   ansible.builtin.lineinfile:
     path: /etc/hosts
-    search_string: '127.0.0.1'
-    line: "{{ item }}"
-  with_items:
-    - "127.0.0.1 {{ hostname }}"
-    - "{{ inventory_hostname }} {{ hostname }}"
+    line: "127.0.0.1 localhost"
+    state: absent
+
+- name: ClearHostsFile_loopback_servername
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: '^127\.0\.0\.1\s+(?!localhost\b)(\S+)'
+    state: absent
+
+- name: ClearHostsFile_ip_servername
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    search_string: "{{ ansible_default_ipv4.address }}"
+    state: absent
+
+#
+- name: AddinHostsFile_loopback_localhost
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    line: "127.0.0.1 localhost"
+    state: present
+
+- name: AddinHostsFile_loopback_servername
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: '^127\.0\.0\.1\s+(?!localhost\b)(\S+)'
+    line: "127.0.0.1 {{ hostname }}"
+    state: present
+
+- name: AddinHostsFile_ip_servername
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    search_string: "{{ ansible_default_ipv4.address }}"
+    line: "{{ ansible_default_ipv4.address }} {{ hostname }}"

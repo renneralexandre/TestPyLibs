@@ -4,20 +4,20 @@ all:
     webservers:
       hosts:
         webserver1:
-          hostname: "web01.local.com"
+          hostname: "w1.local.com"
         webserver2:
-          hostname: "web02.local.com"
+          hostname: "w2.local.com"
     loadbalancers:
       hosts:
         LoadBalancer:
-          hostname: "loadbalancer.local.com"
+          hostname: "lb.local.com"
     databases:
       hosts:
         db:
-          hostname: "database.local.com"
+          hostname: "db.local.com"
     sandboxes:
       hosts:
         sandbox:
-          hostname: "sandbox1.local.com"
+          hostname: "sandbox.local.com"
 
 
